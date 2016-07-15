@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	div#container
+		div(class="blogin")
+			img(src="../images/Llogo-black.png")
+			a(class="overlayLink",href="#",data-action="login") Login
+			a(class="overlayLink",href="#",data-action="register") Register
+
+		div(class="overlay",style="display:none;")
+			div(class="login-wrapper")
+				div#loginTarget(class="login-content")
+				
+		div#error
+			p| #{error}
+
+	script
+		include ../public/javascripts/passwords.js
+		include ../public/javascripts/login-reg.js

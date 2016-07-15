@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	h3= title
+	form#formAddUser(name="register",method="post",action="/register")
+		label(for="sname")
+		input#sname(type="text",name="sname",placeholder="Enter Search Name",required,value="The Search for Bobby Fisher")
+		label(for="tpassword")
+		input#tpassword(class="pwd-t",type="password",name="tpassword",placeholder="Enter Team Leader Password",required,value="team")
+		span(class="input-group-btn")
+			a(class="reveal-t",href="#") Show/Hide Password
+		label(for="apassword")
+		input#apassword(class="pwd-a",type="password",name="apassword",placeholder="Enter Admin Password",required,value="admin")
+		span(class="input-group-btn")
+			a(class="reveal-a",href="#") Show/Hide Password
+		label(for="email")
+		input#email(type="text",name="email",placeholder="name@email.com",required,pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$",value="jhoffoss@gmail.com")
+		input#sid(type="hidden",name="sid",value="")
+		button#btnSubmit(type="submit") Submit
+	a(class="close") x
+	
+	script
+		include ../public/javascripts/passwords.js
+		include ../public/javascripts/close.js
+		include ../public/javascripts/sid-gen.js

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	div#container
+		div(class="blogin")
+			h1 Search added successfully!
+			h3 Your Search ID is:
+				span#copytext(style="font-weight: bold;")= ' ' + sid
+			form#formLogin(name="login",method="post",action="/map")
+				input#sid(type="hidden",name="sid",value=sid)
+				input#password(type="hidden",name="password",value=rawpassword)
+				button#btnSubmit(type="submit") Login to view your Map
+
+		div(class="overlay",style="display:none;")
+			div(class="login-wrapper")
+				div#loginTarget(class="login-content")
+
+		div#error
+			p| #{error}
+
+	script
+		include ../public/javascripts/passwords.js
+		include ../public/javascripts/close.js

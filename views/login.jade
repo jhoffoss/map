@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	h3= title
+	form#formLogin(name="login",method="post",action="/map")
+		label(for="sid") Search ID
+		input#sid(type="text",name="sid",placeholder="Enter Search ID (e.g., 3GT54T1)",value="33D4EHO0",required)
+		label(for="password") Enter a Password
+		p| ...if you have been provided with one.
+		input#password(class="pwd-t",type="password",name="password",placeholder="(Optional) Enter Password")
+		span(class="input-group-btn")
+			a(class="reveal-t",href="#") Show/Hide Password
+		button#btnSubmit(type="submit") Submit
+	a(class="close") x
+	
+	script
+		include ../public/javascripts/passwords.js
+		include ../public/javascripts/close.js
