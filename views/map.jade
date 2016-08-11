@@ -1,57 +1,55 @@
 extends maplayout
 
 block content
-	header(role="banner")
-		button(type="button",class="drawer-toggle drawer-hamburger")
-			span(class="sr-only")
-				p|toggle navigation
-			span(class="drawer-hamburger-icon")
-		nav(class="drawer-nav",role="navigation")
-			ul(class="drawer-menu")
-				li
-					a(class="drawer-brand") Navigation
-				li
-					a(class="drawer-menu-item", href="/map") Home
-				li(class="drawer-dropdown")
-					a(class="drawer-menu-item",data-target="#" href="#",data-toggle="dropdown",role="button",aria-expanded="false") Context Menu 
-						span(class="drawer-caret")
-					ul(class="drawer-dropdown-menu")
-						li
-							a(class="drawer-dropdown-menu-item",href="#") One
-							a(class="drawer-dropdown-menu-item",href="#") Two
-							a(class="drawer-dropdown-menu-item",href="#") Three
-				li(class="drawer-dropdown")
-					a(class="drawer-menu-item",data-target="#" href="#",data-toggle="dropdown",role="button",aria-expanded="false") Context Menu
-						span(class="drawer-caret")
-					ul(class="drawer-dropdown-menu")
-						li
-							a(class="drawer-dropdown-menu-item",href="#") One
-							a(class="drawer-dropdown-menu-item",href="#") Two
-							a(class="drawer-dropdown-menu-item",href="#") Three
-				li
-					a(class="drawer-menu-item", href="/map") Such Great
-				li
-					a(class="drawer-menu-item", href="/map") Amazing Wow!
-					
+
+	script(type='text/javascript').
+		lat = #{sinfo.mapData.centerpoint.lat};
+		lon = #{sinfo.mapData.centerpoint.long};
+		zoom = #{sinfo.mapData.centerpoint.zoom};
+		sid = "#{sinfo.sid}";
+		role = #{role};
+		rawGroundData = "#{mapData.groundData}";
+		rawAirData = "#{mapData.airData}";
+		rawWaterData = "#{mapData.waterData}";
+		rawEvidenceData = "#{mapData.evidenceData}";
+		groundData= JSON.parse(rawGroundData.replace(/&quot;/g,'"'));
+		airData= JSON.parse(rawAirData.replace(/&quot;/g,'"'));
+		waterData= JSON.parse(rawWaterData.replace(/&quot;/g,'"'));
+		evidenceData= JSON.parse(rawEvidenceData.replace(/&quot;/g,'"'));
+
 	main#content(role="main")
+
+		div(class="overlay",style="display:none;z-index:5;")
+			div(class="login-wrapper")
+				div#loginTarget(class="login-content")
 		div#top
 			div#logo
 				img(src="../images/Logo-1.png",class="centered",alt="Llama Finder Logo")
 			div#s-name
-				a(href="/map/#{sinfo.sid}") #{sinfo.sname}
-		div#map
-		div#bottom
+				a#proflink(class="",href="#",data-action="profile",onclick="clickMe();") #{sinfo.searchName} 
+					span(style="font-size:12px;font-weight:normal;") (Click to view Search Profile)
 			div#role(style="float:right;")
-				p| #{role} ( 
+				p| #{roleTitle} ( 
 					a(href='./logout/') Logout
 					|  )
+		div#map
+		div#bottom
+			div#left(style="float:left;color: gray;font-size:12px;")
+				em Version 0.8.6.7 -- build: 5309
 			div#icons(class="centered")
 				img(src="../images/icons/ic_copyright_white_48dp.png",alt="Copyright 2016 Llamas",title="Copyright 2016 Llamas")
-				img(src="../images/icons/ic_report_problem_white_48dp.png",alt="Report a problem",title="Report a problem")
-				img(src="../images/icons/ic_help_outline_white_48pt.png",alt="Help!",title="Help!")
-				img(src="../images/icons/ic_mail_white_48pt.png",alt="Contact Us",title="Contact Us")
+				a(href="../images/LlamaHelp.pdf" target="_blank")
+					img(src="../images/icons/ic_help_outline_white_48pt.png",alt="Help!",title="Help!")
+				a(href="mailto:jhoffoss@gmail.com")
+					img(src="../images/icons/ic_mail_white_48pt.png",alt="Contact Us",title="Contact Us")
+		div#firepit
+			a(class="overlayLink",href="#",data-action="survival")
+				img(src="../images/icons/campfire.png",alt="Survival Information",title="Survival Information")
 
-
-			
 	script
 		include ../public/javascripts/mapfiles.js
+		include ../public/javascripts/passwords.js
+		include ../public/javascripts/close.js
+		include ../public/javascripts/login-reg.js
+
+

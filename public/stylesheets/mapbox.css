@@ -314,7 +314,7 @@
 
 .leaflet-control-layers-expanded {
 	background: #fff;
-	padding: 6px 10px 6px 6px;
+	padding: 5px;
 	color: #404040;
 	color: rgba(0, 0, 0, .75)
 }
@@ -326,7 +326,9 @@
 }
 
 .leaflet-control-layers label {
-	display: block
+	display: block;
+	margin: 0;
+	padding: 5px;
 }
 
 .leaflet-control-layers-separator {
@@ -1054,5 +1056,5 @@
 }
 
 #map > div.leaflet-control-container > div.leaflet-top.leaflet-left {
-	top: 45px;
+	top: 0px;
 }

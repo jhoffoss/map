@@ -1,0 +1,66 @@
+extends maplayout
+
+block content
+	header(role="banner")
+		button(type="button",class="drawer-toggle drawer-hamburger")
+			span(class="sr-only")
+				p|toggle navigation
+			span(class="drawer-hamburger-icon")
+		nav(class="drawer-nav",role="navigation")
+			ul(class="drawer-menu")
+				li
+					a(class="drawer-brand") Navigation
+				li
+					a(class="drawer-menu-item", href="/map") Home
+				li(class="drawer-dropdown")
+					a(class="drawer-menu-item",data-target="#" href="#",data-toggle="dropdown",role="button",aria-expanded="false") Context Menu 
+						span(class="drawer-caret")
+					ul(class="drawer-dropdown-menu")
+						li
+							a(class="drawer-dropdown-menu-item",href="#") One
+							a(class="drawer-dropdown-menu-item",href="#") Two
+							a(class="drawer-dropdown-menu-item",href="#") Three
+				li(class="drawer-dropdown")
+					a(class="drawer-menu-item",data-target="#" href="#",data-toggle="dropdown",role="button",aria-expanded="false") Context Menu
+						span(class="drawer-caret")
+					ul(class="drawer-dropdown-menu")
+						li
+							a(class="drawer-dropdown-menu-item",href="#") One
+							a(class="drawer-dropdown-menu-item",href="#") Two
+							a(class="drawer-dropdown-menu-item",href="#") Three
+				li
+					a(class="drawer-menu-item", href="/map") Such Great
+				li
+					a(class="drawer-menu-item", href="/map") Amazing Wow!
+					
+	main#content(role="main")
+		div#top
+			div#radio
+				form
+					input(class="maginStuff" type="radio" name="layer" onclick="toggleLayer(this.value)" value="air")
+					| Air
+					input(class="maginStuff" type="radio" name="layer" onclick="toggleLayer(this.value)" value="ground" checked="checked")
+					| Ground
+					input(class="maginStuff" type="radio" name="layer" onclick="toggleLayer(this.value)" value="water")
+					| Water
+			div#logo
+				img(onclick="init.togglex()", src="../images/Logo-1.png",class="centered",alt="Llama Finder Logo")
+			div#s-name
+				a(href="/map/#{sinfo.sid}") #{sinfo.sname}
+		div#map
+		div#bottom
+			div#role(style="float:right;")
+				p| #{role} ( 
+					a(href='./logout/') Logout
+					|  )
+			div#icons(class="centered")
+				img(src="../images/icons/ic_copyright_white_48dp.png",alt="Copyright 2016 Llamas",title="Copyright 2016 Llamas")
+				img(src="../images/icons/ic_report_problem_white_48dp.png",alt="Report a problem",title="Report a problem")
+				img(src="../images/icons/ic_help_outline_white_48pt.png",alt="Help!",title="Help!")
+				img(src="../images/icons/ic_mail_white_48pt.png",alt="Contact Us",title="Contact Us")
+
+
+			
+	script
+		include ../public/javascripts/mapfiles.js
+		include ../public/javascripts/mapfilesCoordinator.js

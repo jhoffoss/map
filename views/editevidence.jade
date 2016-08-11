@@ -1,0 +1,47 @@
+block content
+
+	h3= title
+
+	div#formWrapper
+		form#formUpdateProfile(name="editevidence",method="post",action="/editevidence")
+			table#editevvy
+				tr
+					td
+						label(for="teamName") Team that Found Evidence
+						br
+						input#teamName(type="text",name="teamName",placeholder="Enter Team Name/Number",required,value="Team Llamas",style="width:300px;")
+
+				tr
+					td
+						label(for="dateTime") Date and Time Found
+						br
+						input#dateTime(type="datetime-local",name="dateTime",required,style="width:300px;")
+
+				tr
+					td
+						label(for="evType") Type of Evidence
+						br
+						input#evType(type="text",name="evType",placeholder="(ex: Clothing, Food Wrapper)",required,value="Clothing",style="width:300px;")
+
+				tr
+					td
+						label(for="evDetails") Describe the evidence and all other relevant info:
+						br
+						textarea#evDetails(type="textarea",name="evDetails",required,placeholder="Be as descriptive as possible.",style="width:300px;height:200px;")
+							|Blue hoodie with a cigarette burn found in a raspberry bush; dirty; wet
+
+				tr
+					td
+						input#sid(type="hidden",name="sid",value="#{sid}")
+						input#uid(type="hidden",name="uid",value="#{uid}")
+						input#imageURL(type="hidden",name="imageURL",value="/images/upload/placeholder2.png")
+						br
+						button#withPhoto(class="photoSubmit",type="submit",style="float:left,background-color:green",name="withPhoto") Add a photo to Evidence
+						br
+						button#withoutPhoto(class="photoSubmit",type="submit",style="float:left",name="withoutPhoto") Submit without a photo
+						br
+						button(type="reset", style="float:left;background-color:#e95050") Reset
+
+
+
+

@@ -1,0 +1,143 @@
+extends layout
+
+block content
+	h3= title
+
+	div#formWrapper
+		form#formUpdateProfile(name="createprofile",method="post",action="/createprofile")
+			table#update
+				tr
+					td
+						label(for="pname") Name of Missing Person
+						input#pname(type="text",name="pname",placeholder="Enter Name of the Missing Person",required)
+
+					td
+						label(for="page") Person's Age
+						input#page(type="text",name="page",placeholder="Enter Age",required)
+				tr
+					td
+						label(for="pgender") Gender
+						input#pgender(type="text",name="pgender",placeholder="Male or Female",required)
+
+					td
+						label(for="pheight") Height
+						span inches
+						input#pheight(type="text",name="pheight",placeholder="Height in Inches",style="width:100px;")
+
+				tr
+					td
+						label(for="pweight") Weight
+						span lbs
+						input#pweight(type="text",name="pweight",placeholder="Approx. Weight in Pounds",style="width:117px;")
+
+
+					td
+						label(for="phair") Hair Color/Length
+						input#phair(type="text",name="phair",placeholder="Color(s), Length")
+
+				tr
+					td
+						label(for="peye") Eye Color
+						input#peye(type="text",name="peye",placeholder="Eye Color")
+					td
+						label(for="pdetails") Ethnicity
+						input#pdetails(type="text",name="pdetails",placeholder="Caucasian, Latino, African American, etc")
+
+				tr
+					td
+						label(for="city") City
+						input#city(type="text",name="city",placeholder="House, Store, etc")
+					td
+						label(for="stateLost") State
+						select#stateLost(name="stateLost")
+							option(value="AL") AL
+							option(value="AK") AK
+							option(value="AZ") AZ
+							option(value="AR") AR
+							option(value="CA") CA
+							option(value="CO") CO
+							option(value="CT") CT
+							option(value="DE") DE
+							option(value="DC") DC
+							option(value="FL") FL
+							option(value="GA") GA
+							option(value="HI") HI
+							option(value="ID") ID
+							option(value="IL") IL
+							option(value="IN") IN
+							option(value="IA") IA
+							option(value="KS") KS
+							option(value="KY") KY
+							option(value="LA") LA
+							option(value="ME") ME
+							option(value="MD") MD
+							option(value="MA") MA
+							option(value="MI") MI
+							option(value="MN") MN
+							option(value="MS") MS
+							option(value="MO") MO
+							option(value="MT") MT
+							option(value="NE") NE
+							option(value="NV") NV
+							option(value="NH") NH
+							option(value="NJ") NJ
+							option(value="NM") NM
+							option(value="NY") NY
+							option(value="NC") NC
+							option(value="ND") ND
+							option(value="OH") OH
+							option(value="OK") OK
+							option(value="OR") OR
+							option(value="PA") PA
+							option(value="RI") RI
+							option(value="SC") SC
+							option(value="SD") SD
+							option(value="TN") TN
+							option(value="TX") TX
+							option(value="UT") UT
+							option(value="VT") VT
+							option(value="VA") VA
+							option(value="WA") WA
+							option(value="WV") WV
+							option(value="WI") WI
+							option(value="WY") WY
+
+				tr
+					td
+						label(for="lkl") Last Known Location
+						input#lkl(type="text",name="lkl",placeholder="House, Store, etc")
+					td
+						label(for="lsw") Last Seen Wearing
+						input#lsw(type="text",name="lsw",placeholder="Be as detailed as possible")
+				tr
+					td
+						label(for="vmake") Vehicle Make
+						input#vmake(type="text",name="vmake",placeholder="Make")
+					td
+						label(for="vmodel") Vehicle Model
+						input#vmodel(type="text",name="vmodel",placeholder="Model")
+				tr
+					td
+						label(for="vyear") Vehicle Year
+						input#vyear(type="text",name="vyear",placeholder="Year")
+					td
+						label(for="vcolor") Vehicle Color
+						input#vcolor(type="text",name="vcolor",placeholder="Color")
+				tr
+					td(colspan="2")
+						label(for="vdetails") Additional Details
+						textarea#vdetails(name="vdetails",placeholder="Any extra info that might help find the person.")
+
+				tr
+					td
+						button(type="reset", style="float:right;background-color:#e95050") Reset
+					td
+						input#sid(type="hidden",name="sid")
+						button#btnSubmit(type="submit",style="float:left") Submit
+
+
+		a(class="close") x
+
+	script
+		include ../public/javascripts/close.js
+		include ../public/javascripts/height.js

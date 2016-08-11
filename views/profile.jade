@@ -1,0 +1,53 @@
+block content
+	script.
+		role = #{role}
+	h3 #{sinfo.searchName}
+	h2 Search ID: #{sinfo.sid}
+
+	div#profile
+		div#profileHeader
+			h4(class="profileh4")
+				|#{sinfo.profile.name}
+			p
+				|#{sinfo.profile.physicalDescription.age} years old, #{sinfo.profile.physicalDescription.extra}, #{sinfo.profile.physicalDescription.gender}
+				br
+				|#{sinfo.profile.physicalDescription.weight} pounds, #{sinfo.profile.physicalDescription.height} inches
+				br
+				|#{sinfo.profile.physicalDescription.hair} hair, #{sinfo.profile.physicalDescription.eyes} eyes
+				br
+				|Last Seen at/in #{sinfo.profile.lastKnownLocation}, wearing #{sinfo.profile.lastSeenWearing}
+				br
+				|In #{sinfo.profile.city}, #{sinfo.profile.stateLost}
+
+			if role == 2
+				a(class="updateProfileLink",href="#",data-action="upload",display="color:black;")
+					img(src=sinfo.profile.imageURL,style="float:right;width:140px;height:200px;")
+			else
+				img(src=sinfo.profile.imageURL,style="float:right;width:140px;height:200px;")
+
+		div#profileBody
+			h4(class="profileh4")
+				|Vehicle Information
+			p
+				|A #{sinfo.profile.vehicle.color} #{sinfo.profile.vehicle.year} #{sinfo.profile.vehicle.make} #{sinfo.profile.vehicle.model}
+				br
+				|#{sinfo.profile.vehicle.details}
+
+		div#profileFooter
+			p
+				|Search Status: #{sinfo.profile.state.active}
+				br
+				|Has #{sinfo.profile.state.found} been found.
+
+			if role == 2
+				div(display="float:right;")
+					a(class="updateProfileLink",href="#",data-action="updateprofile",display="color:black;") Edit Profile
+			else
+				// nothing
+
+	a(class="close") x
+
+	script
+		include ../public/javascripts/close.js
+		include ../public/javascripts/login-reg.js
+

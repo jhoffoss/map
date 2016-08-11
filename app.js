@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongo = require('mongodb');
 const monk = require('monk');
-const db = monk('localhost:27017/nodetest1');
+const db = monk('localhost:27017/map');
 
 var routes = require('./routes/index');
 
@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Make our db accessible to our router
 app.use(function(req,res,next){

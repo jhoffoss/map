@@ -28,7 +28,7 @@
 }
 
 .leaflet-retina .leaflet-draw-toolbar a {
-	background-image: url('images/spritesheet-2x.png');
+	background-image: url('../images/icons/spritesheet-2x.png');
 	background-size: 270px 30px;
 }
 
@@ -300,4 +300,52 @@
 
 .leaflet-oldie .leaflet-draw-toolbar {
 	border: 1px solid #999;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-water {
+	background-image: url('../images/icons/water-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-water {
+	background-image: url('../images/icons/water-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-ground {
+	background-image: url('../images/icons/ground-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-ground {
+	background-image: url('../images/icons/ground-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-air {
+	background-image: url('../images/icons/air-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-air {
+	background-image: url('../images/icons/air-search.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-evidence {
+	background-image: url('../images/icons/add-evidence.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
+}
+
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-evidence {
+	background-image: url('../images/icons/add-evidence.png');
+	background-position: 3px 3px;
+	background-size: 20px 20px;
 }

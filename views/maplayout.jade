@@ -4,7 +4,6 @@ html
 		title= title
 		meta(charset='utf-8')
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel='stylesheet', href='/stylesheets/drawer.css')
 		link(rel='stylesheet', href='/stylesheets/mapbox.css')
 		link(href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300',rel='stylesheet',type='text/css')
 		link(rel="icon",href="/images/favicon.ico",type="image/x-icon")
@@ -13,11 +12,13 @@ html
 		script(src="/javascripts/jquery-2.2.4.min.js")
 		script(src="/javascripts/tether.js")
 		script(src="/javascripts/bootstrap.min.js")
-		script(src="/javascripts/iscroll.js")
-		script(src="/javascripts/drawer.js",charset="utf-8")
 		script(src='/javascripts/mapbox.js')
 		script(src='/javascripts/leaflet.draw.js')
 		script(src='/javascripts/leaflet-geodesy.js')
 
 	body(class="drawer drawer--left bg-lb")
+		script.
+			role = #{role}
 		block content
+
+

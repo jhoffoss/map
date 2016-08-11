@@ -23,7 +23,11 @@
 					polygon: "Draw a polygon",
 					rectangle: "Draw a rectangle",
 					circle: "Draw a circle",
-					marker: "Draw a marker"
+					marker: "Draw a marker",
+					water: "Draw a Water Search",
+					air: "Draw an Air Search",
+					ground: "Draw a Ground Search",
+					evidence: "Place a piece of Evidence"
 				}
 			},
 			handlers: {
@@ -38,7 +42,33 @@
 						start: "Click map to place marker."
 					}
 				},
+				evidence: {
+					tooltip: {
+						start: "Click map to place a piece of evidence."
+					}
+				},
 				polygon: {
+					tooltip: {
+						start: "Click to start drawing shape.",
+						cont: "Click to continue drawing shape.",
+						end: "Click first point to close this shape."
+					}
+				},
+				air: {
+					tooltip: {
+						start: "Click to start drawing shape.",
+						cont: "Click to continue drawing shape.",
+						end: "Click first point to close this shape."
+					}
+				},
+				ground: {
+					tooltip: {
+						start: "Click to start drawing shape.",
+						cont: "Click to continue drawing shape.",
+						end: "Click first point to close this shape."
+					}
+				},
+				water: {
 					tooltip: {
 						start: "Click to start drawing shape.",
 						cont: "Click to continue drawing shape.",

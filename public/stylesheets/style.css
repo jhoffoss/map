@@ -30,7 +30,7 @@ html {
 #top {
     position: relative;
     width: 100%;
-    height: 40px;
+    height: 26px;
     top: 0;
     background-color: #222222;
 	z-index: 1;
@@ -85,7 +85,7 @@ button {
     z-index: 1;
     position: absolute;
     top: 0;
-    left: calc(50% - 145px);
+    left: calc(50% - 148px);
 }
 
 #s-name {
@@ -93,11 +93,11 @@ button {
     z-index: 1;
     position: absolute;
 	vertical-align: middle;
-    right: 8px;
-    float: right;
+    left: 4px;
     color: white;
 	text-align: right;
-	font-size: 1.45em;
+	font-size: 1.1em;
+	top: -3px;
 }
 
 #searchlist > li, h1, h3 {
@@ -106,12 +106,24 @@ button {
 	margin-left: 5px;
 }
 
+h4 {
+	color: black;
+	margin-bottom: 15px;
+	margin-left: 5px;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
 #searchlist > li > p {
 	margin-left: 10px;
 }
 
 #s-name p{
 	font-size: .75em;
+}
+
+#role > p {
+	font-size: .9em;
 }
 
 #role {
@@ -173,7 +185,7 @@ a.close {
     right: 1.25rem;
 }
 
-a.close:hover {
+a.close:hover, #survclose {
     background-color: #444;
     cursor: pointer;
 }
@@ -204,13 +216,15 @@ div.overlay > div.login-wrapper > div.login-content {
     background-color: rgb(255,255,255);
     border-radius: 2px;
     padding: 24px;
-    position: relative;
+    position: absolute;
+	width:500px;
+	top: calc(50% - 220px);
 }
 
 div.overlay > div.login-wrapper > div.login-content > h3 {
     color: rgb(0,0,0);
     font-size: 1.8em;
-    margin: 0 0 1.25em;
+    margin: 0 0 1em;
     padding: 0;
 }
 /*
@@ -289,7 +303,7 @@ form button:hover {
     margin: 10px;
 }
 
-.blogin a {
+.blogin a, #showHideLayers a {
     display: block;
 	font-weight: 400;
 	letter-spacing: 1px;
@@ -356,14 +370,197 @@ form button:hover {
 	margin-top:-10px;
 }
 
-#icons > img, #icons {
+#icons > img, #icons, #icons > a > img {
     height: 23px;
     width: auto;
     vertical-align: middle;
+	padding-left: 10px;
 }
 
 #icons {
-	padding-left: 5px;
+	float: right;
+	margin-right: 22px;
+}
+
+#showHideLayers {
+    color: black;
+    float: right;
+	bottom: 28px;
+	right: 0px;
+	position: absolute;
+	z-index: 100000;
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	pointer-events: all;
+	cursor: default;
+}
+
+.mapLayerController {
+	margin: 3px;
+	float: right;
+	cursor: pointer;
+}
+
+#layerController {
+	list-style-type: none;
+}
+
+#layerController > li {
+	float: left;
+	clear: both;
+	width: 100%;
+	cursor: pointer;
+}
+
+#layerController > li:hover {
+	background-color: #8fcaec;
+}
+
+.mapLayerController > label, .onMap {
+	margin: 4px;
+	float: right;
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	font-size: 14px;
+	padding: 1px;
+}
+
+#showHideLayers > p {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#leftSide > input,
+#rightSide > input {
+	font-size: .8em;
+	height: 20px;
+	width: 220px;
+	margin: 0px 0 2px 0;
+}
+
+#leftSide > label,
+#rightSide > label {
+	font-size: .8em;
+	height: auto;
+	width: 220px;
+	margin: 8px 0 2px 0;
+	font-weight: bold;
+	line-height: normal;
+}
+
+#rightSide {
+	float: right;
+	position: relative;
+	width: 220px;
+}
+
+#leftSide {
+	position: absolute;
+	width: 220px;
+}
+
+#profile > p, #profile > ul > li {
+    font-size: .8em;
+}
+
+#profile > ul {
+    padding-left: 25px;
+}
+
+#survclose {
+    background-color: rgb(0,0,0);
+    color: rgb(255,255,255);
+    display: block;
+    font-size: 2em;
+    padding: 0 15px;
+    position: absolute;
+    top: 20px;
+    transition: all 400ms ease;
+    right: 10px;
+    line-height: 45px;
+}
+
+#firepit {
+    float: left;
+    left: calc(50% - 20px);
+    bottom: 0;
+    z-index: 50;
+    position: absolute;
+}
+
+#firepit img {
+    height: 40px;
+    width: 40px;
+}
+
+#update {
+	width:448px;
+}
+
+#update > tbody > tr,
+#update > tbody > tr > td {
+	font-size: 12px;
+}
+
+#update > tbody > tr > td {
+	width: 222px;
+
+}
+
+#update > tbody > tr > td > label {
+	margin: 2px 8px 0 0;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#update > tbody > tr > td > input,
+#update > tbody > tr > td > textarea {
+	width: 100%;
+	margin: 0;
+	margin-top: 2px;
+	padding: 3px;
+	font-size: 12px;
+}
+
+#profileFooter > div > a {
+	color:black;
+	float: right;
+	clear: both;
+}
+
+#imageUpload {
+	margin: 25px;
+	padding: 50px;
+}
+
+#imageUpload > p > input,
+#imageUpload > p {
+	line-height: 20px;
+	font-size: 16px;
+}
+
+.popUpFormatting > h3 {
+	color: black;
+}
+
+.popUpFormatting {
+	width: 250px;
+}
+
+.popUpTitle {
+	font-weight: bold;
+}
+
+.mapLayerObject > input, #teamName, .mapLayerObjectTextarea, #evType, #details {
+	font-size:12px;
+	height: 20px;
+	width: 180px;
+	padding: 2px;
+	margin: 3px 3px 10px 3px;
 }
 
 .mapLayerObjectBox {
@@ -374,19 +571,86 @@ form button:hover {
 }
 
 .mapLayerObject {
-	width: 170px;
+	width: 190px;
 	float: right;
-	padding: 3px;
+	padding: 2px;
 	line-height: normal;
+	font-size: 12px;
 }
 
-.mapLayerObjectTextarea {
-	width: 200px;
-	height: 80px;
-}
+/*.mapLayerObjectTextarea, #details {
+	height: 40px;
+}*/
 
 .mapLayerObjectLink > img {
 	height: 24px;
 	width: 24px;
 }
 
+#evdSubmit {
+	width:100%;
+	height: 30px;
+	color: white;
+	font-weight: bold;
+	margin:0;
+	padding:0;
+	margin-left: 3px;
+}
+
+#evdCancel, #withoutPhoto {
+	width:50%;
+	height: 20px;
+	color: white;
+	font-size: 10px;
+	font-weight: normal;
+	margin:3px 3px 10px 3px;
+	padding:0;
+	background-color: #e95050;
+	margin-left: calc(50% - 42px);
+}
+
+#areaSubmit {
+	width:96%;
+	height: 30px;
+	color: white;
+	font-weight: bold;
+	margin:3px;
+	padding:0;
+}
+
+#areaCancel {
+	width:50%;
+	height: 20px;
+	color: white;
+	font-size: 10px;
+	font-weight: normal;
+	margin:3px 3px 10px 3px;
+	padding:0;
+	background-color: #e95050;
+	margin-left: calc(50% - 49px);
+}
+
+.profileh4 {
+	margin-bottom: 0;
+}
+
+#profileHeader > p,
+#profileBody > p {
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+#profileFooter > p {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+#loginTarget > h3{
+	margin-bottom: 0;
+}
+
+#update > tbody > tr > td > span {
+	float: right;
+	margin-right: 86px;
+	margin-top: 10px;
+}

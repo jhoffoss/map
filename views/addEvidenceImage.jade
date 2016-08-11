@@ -1,0 +1,15 @@
+block content
+	script.
+		role = #{role}
+		uid = #{uid}
+
+	h3= title
+	form#imageUpload(action="addEvidenceImage", method="POST",enctype="multipart/form-data")
+		p
+			|Select an image to upload:
+			br
+			input(type="file",name="evimage")
+			input(type="hidden",name="uid",value=uid)
+			br
+			button#btnSubmit(type="submit",style="float:right") Upload Image
+

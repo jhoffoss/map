@@ -5,11 +5,11 @@ block content
 		div(class="blogin")
 			h1 Search added successfully!
 			h3 Your Search ID is:
-				span#copytext(style="font-weight: bold;")= ' ' + sid
+				span#copytext(style="font-weight: bold;")= ' ' + sinfo.sid
 			form#formLogin(name="login",method="post",action="/map")
-				input#sid(type="hidden",name="sid",value=sid)
+				input#sid(type="hidden",name="sid",value=sinfo.sid)
 				input#password(type="hidden",name="password",value=rawpassword)
-				button#btnSubmit(type="submit") Login to view your Map
+				a(class="overlayLink",href="#",data-action="createprofile") Fill out the Search Profile
 
 		div(class="overlay",style="display:none;")
 			div(class="login-wrapper")
@@ -21,3 +21,4 @@ block content
 	script
 		include ../public/javascripts/passwords.js
 		include ../public/javascripts/close.js
+		include ../public/javascripts/login-reg.js
